@@ -79,6 +79,11 @@ app.listen(PORT, async () => {
   }
 
   // R04
+	const defaultStudent: Student = {
+		name: '',
+		grade: 0
+	};
+
   const bestStudent = students.reduce<Student>(
     (currentStudent, student) => {
       if (student.grade > currentStudent.grade) {
@@ -87,7 +92,7 @@ app.listen(PORT, async () => {
 
       return currentStudent;
     },
-    students[0],
+		defaultStudent
   );
 
   console.log(
